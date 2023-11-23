@@ -2,7 +2,7 @@ import React from 'react';
 
 import { logo } from '../assets';
 import styles from '../style';
-import { footerLinks, socialMedia } from '../constants';
+import { footerLinks } from '../constants';
 
 const Footer = () => {
   return (
@@ -20,9 +20,9 @@ const Footer = () => {
         </div>
 
         <div className='flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10'>
-          {footerLinks.map(() => (
-            <div className='flex flex-col ss:my-0 my-4 min-w-[150px]'>
-              <h4>{link.title}</h4>
+          {footerLinks.map((link, i) => (
+            <div className='flex flex-col ss:my-0 my-4 min-w-[150px]' key={i}>
+              <h4 className={`${styles.paragraph}`}>{link.title}</h4>
             </div>
           ))}
         </div>
